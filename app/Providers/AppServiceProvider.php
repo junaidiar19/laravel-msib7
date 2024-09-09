@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Opcodes\LogViewer\Facades\LogViewer;
 
@@ -30,5 +31,7 @@ class AppServiceProvider extends ServiceProvider
                     'xlubowitz@example.net',
                 ]);
         });
+
+        Paginator::useBootstrapFive();
     }
 }

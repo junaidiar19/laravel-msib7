@@ -17,6 +17,7 @@
 <table border="1">
     <thead>
         <tr>
+            <th>No</th>
             <th>Nama</th>
             <th>Email</th>
             <th>Gender</th>
@@ -26,11 +27,14 @@
     <tbody>
         @foreach ($users as $user)
             <tr>
+                <td>{{ increment($users, $loop) }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->gender_description }}</td>
-                <td>{{ str()->upper($user->religion) }}</td>
+                <td>{{ hurufBesar($user->religion) }}</td>
             </tr>
         @endforeach
     </tbody>
 </table>
+<br>
+{{ $users->links() }}
